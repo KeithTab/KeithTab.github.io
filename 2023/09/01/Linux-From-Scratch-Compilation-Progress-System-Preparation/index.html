@@ -18,13 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="article">
+        <meta name="description" content="Linux From Scratch (System Preparation)This article provides a brief introduction to partition-related knowledge in LFS . Personally, I believe that the content covered in this section is quite valuab">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Linux From Scratch Compilation Progress(System Preparation)">
 <meta property="og:url" content="http://example.com/2023/09/01/Linux-From-Scratch-Compilation-Progress-System-Preparation/index.html">
 <meta property="og:site_name" content="KeithTab&#39;s Blog">
+<meta property="og:description" content="Linux From Scratch (System Preparation)This article provides a brief introduction to partition-related knowledge in LFS . Personally, I believe that the content covered in this section is quite valuab">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-09-01T10:28:17.000Z">
-<meta property="article:modified_time" content="2023-09-01T10:30:05.709Z">
+<meta property="article:modified_time" content="2023-09-26T02:42:16.240Z">
 <meta property="article:author" content="KeithTab Shen">
 <meta property="article:tag" content="Linux From Scratch Compilation">
 <meta name="twitter:card" content="summary">
@@ -230,8 +232,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-09-01 18:30:05</span>
-            <span class="mobile">2023-09-01 18:30:05</span>
+            <span class="desktop">2023-09-26 10:42:16</span>
+            <span class="mobile">2023-09-26 10:42:16</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -266,7 +268,9 @@
         
 
         <div class="article-content markdown-body">
-            
+            <h2 id="Linux-From-Scratch-System-Preparation"><a href="#Linux-From-Scratch-System-Preparation" class="headerlink" title="Linux From Scratch (System Preparation)"></a>Linux From Scratch (System Preparation)</h2><p>This article provides a brief introduction to partition-related knowledge in <em><a class="link"   target="_blank" rel="noopener" href="https://www.linuxfromscratch.org/" >LFS <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></em>. Personally, I believe that the content covered in this section is quite valuable and worth understanding. Many subsequent tasks mainly involve compiling various components, and so on. If you are interested in learning about the specific compilation process, application, and principles of each package, you can refer to the relevant content in the <em>LFS&#x2F;BLFS</em> manual. The manual is regularly updated at each stage, and there may be some minor differences in the compilation methods. Paying attention to these distinctions will help avoid significant issues.</p>
+<p>1.First, we need to have a host operating system. Personally, I am using the <em><a class="link"   target="_blank" rel="noopener" href="https://almalinux.org/zh-hans/" >AlmaLinux system <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></em>. To avoid partitioning our main system and risking damage, it is more cost-effective to use <em><a class="link"   target="_blank" rel="noopener" href="https://www.virtualbox.org/wiki/Downloads" >VirtualBox <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></em> as a virtualization software to set up the host system. Alternatively, we can use VMware on Windows for system setup. In this case, we will use the <em><a class="link"   target="_blank" rel="noopener" href="https://www.gentoo.org/" >Gentoo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></em> live image file for the host system. This allows for easier packaging of the image and partitioning. VirtualBox provides executable installation files for both Windows and Linux. For Debian and RedHat-based operating systems, software installation can be done directly through the dpkg or rpm package managers.</p>
+
         </div>
 
         
@@ -278,7 +282,7 @@
         <li><strong>Created at:</strong> 2023-09-01 18:28:17</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-09-01 18:30:05
+                <strong>Updated at:</strong> 2023-09-26 10:42:16
             </li>
         
         <li>
@@ -337,7 +341,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Linux From Scratch Compilation Progress(System Preparation)</div>
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-From-Scratch-System-Preparation"><span class="nav-text">Linux From Scratch (System Preparation)</span></a></li></ol>
 
     </div>
 </div>
