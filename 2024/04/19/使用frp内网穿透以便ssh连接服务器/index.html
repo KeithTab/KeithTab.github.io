@@ -13,20 +13,26 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/tags/"/>
+    <link rel="canonical" href="http://example.com/2024/04/19/使用frp内网穿透以便ssh连接服务器/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+        <meta name="description" content="关于frp，首先需要先了解一下关于他的基本概念，frp是一款高性能的反向代理应用，专注于内网穿透。支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp可以比较方便的将内网服务暴露到公网，通过拥有公网 IP 的节点进行中转。关于操作步骤，首先需要一台云服务器，这里我选择的是华为云，为了后续操作方便设置ssh免密码登陆的操作以及提前准备如下： 123a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用frp内网穿透以便ssh连接服务器">
+<meta property="og:url" content="http://example.com/2024/04/19/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BB%A5%E4%BE%BFssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于frp，首先需要先了解一下关于他的基本概念，frp是一款高性能的反向代理应用，专注于内网穿透。支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp可以比较方便的将内网服务暴露到公网，通过拥有公网 IP 的节点进行中转。关于操作步骤，首先需要一台云服务器，这里我选择的是华为云，为了后续操作方便设置ssh免密码登陆的操作以及提前准备如下： 123a">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-03-19T13:24:00.000Z">
-<meta property="article:modified_time" content="2024-03-19T13:24:00.650Z">
+<meta property="og:image" content="http://example.com/2024/04/19/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BB%A5%E4%BE%BFssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%AE%89%E5%85%A8%E7%BB%84.png">
+<meta property="og:image" content="http://example.com/2024/04/19/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BB%A5%E4%BE%BFssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/frps%E6%BF%80%E6%B4%BB%E7%A4%BA%E4%BE%8B.png">
+<meta property="og:image" content="http://example.com/2024/04/19/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BB%A5%E4%BE%BFssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/success.png">
+<meta property="article:published_time" content="2024-04-19T12:21:56.000Z">
+<meta property="article:modified_time" content="2024-04-19T12:24:22.616Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/04/19/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BB%A5%E4%BE%BFssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%AE%89%E5%85%A8%E7%BB%84.png">
     
     
     <!--- Icon Part-->
@@ -38,7 +44,7 @@
     
     <title>
         
-            Tags -
+            使用frp内网穿透以便ssh连接服务器 -
         
         Keith&#39;s Blog
     </title>
@@ -378,31 +384,236 @@
             <div class="main-content">
 
                 
-                    
-<div class="tagcloud-container">
-	<div>
-		<h1 class="tagcloud-header">Tags</h1>
-	</div>
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
 
-	
-	<div class="tagcloud-content">
-		<ul class="tag-list" data-show-value="true">
-			
-				<li>
-					<a data-weight="3" href="/tags/Enhanced-Sampling-Method/">
-						<i class="fa-solid fa-hashtag"></i>Enhanced Sampling Method
-					</a>
-				</li>
-			
-				<li>
-					<a data-weight="1" href="/tags/Linux-From-Scratch-Compilation/">
-						<i class="fa-solid fa-hashtag"></i>Linux From Scratch Compilation
-					</a>
-				</li>
-			
-		</ul>
-	</div>
-	
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color text-4xl md:text-6xl font-bold px-2 sm:px-6 md:px-8 py-3">使用frp内网穿透以便ssh连接服务器</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/av.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Keith</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-04-19 20:21:56</span>
+        <span class="mobile">2024-04-19 20:21:56</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-04-19 20:24:22</span>
+            <span class="mobile">2024-04-19 20:24:22</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <p>关于frp，首先需要先了解一下关于他的基本概念，frp是一款高性能的反向代理应用，专注于内网穿透。支持多种协议，包括 TCP、UDP、HTTP、HTTPS 等，并且具备 P2P 通信功能。使用 frp可以比较方便的将内网服务暴露到公网，通过拥有公网 IP 的节点进行中转。关于操作步骤，首先需要一台云服务器，这里我选择的是华为云，为了后续操作方便设置ssh免密码登陆的操作以及提前准备如下：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt update &amp;&amp; apt upgrade </span><br><span class="line">apt install openssh-server</span><br><span class="line">ssh-keygen -t rsa &amp;&amp; ssh-copy-id root@ip</span><br></pre></td></tr></table></figure></div>
+
+<p>接下来打开服务器实例，并设置其中的安全组：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/04/19/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BB%A5%E4%BE%BFssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%AE%89%E5%85%A8%E7%BB%84.png"
+                     
+                ></p>
+<p>打开更多并选择查看详情就可以设置新的规则与端口。</p>
+<h4 id="一-在云服务器部署frps服务端"><a href="#一-在云服务器部署frps服务端" class="headerlink" title="一.在云服务器部署frps服务端"></a>一.在云服务器部署frps服务端</h4><blockquote>
+<p>1.frp可以在如下链接下载：<a class="link"   target="_blank" rel="noopener" href="https://github.com/fatedier/frp" >https://github.com/fatedier/frp <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>2.同时也可以查阅frp的官方文档：<a class="link"   target="_blank" rel="noopener" href="https://gofrp.org/zh-cn/" >https://gofrp.org/zh-cn/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<p>首先可以在云服务器中通过wget或者别的下载器下载frp最新的release包，并直接解压，如果下载不了，则可以在本地线下载好之后通过scp或者rsync上传包至云服务器，类似的命令主要如下：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp myfile root@ip:/root/storage</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如果上传文件夹，则在scp后加上参数-r，具体的flag使用-h查看</span></span><br></pre></td></tr></table></figure></div>
+
+<p>接下来对frp的压缩包进行如下主要操作：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf frp_0.57.0_linux_amd64.tar.gz </span><br><span class="line">mv -v frp_0.57.0_linux_amd64 /opt/frp</span><br></pre></td></tr></table></figure></div>
+
+<p>在你进入frp文件夹下之后你就会发现一些frpc,frps的可执行文件以及对应的toml配置文件，我们需要在服务端配置frps的配置文件，为了便捷考虑，此处按照最简单的默认设置来进行处理：</p>
+<div class="highlight-container" data-rel="Toml"><figure class="iseeu highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在这里我们设置了frp服务端接收客户端连接的端口为7000，接下来搭配systemd编写文件从而控制frps的启动停止与自启动，文件的位置位于目录**<u>&#x2F;etc&#x2F;systemd&#x2F;system&#x2F;</u>**之中，接下来编写文件如下：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description = frp server in HuaWei</span><br><span class="line">After = network.target syslog.target</span><br><span class="line">Wants = network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type = simple</span><br><span class="line">ExecStart = /opt/frp/frps -c /opt/frp/frps.toml</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy = multi-user.target</span><br></pre></td></tr></table></figure></div>
+
+<p>使用如下的命令启动frps服务：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start frps &amp;&amp; systemctl enable frps</span><br></pre></td></tr></table></figure></div>
+
+<p>完成上述操作之后在服务端的配置已经基本完成，使用如下systemctl status可以查看frps服务是否已经启动，正常激活状态的情况如下所示：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/04/19/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BB%A5%E4%BE%BFssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/frps%E6%BF%80%E6%B4%BB%E7%A4%BA%E4%BE%8B.png"
+                     
+                ></p>
+<h4 id="二-在客户端服务器进行frpc配置"><a href="#二-在客户端服务器进行frpc配置" class="headerlink" title="二.在客户端服务器进行frpc配置"></a>二.在客户端服务器进行frpc配置</h4><p>frpc的大多数配置和frps的大多数配置过程一致，就不再重复，如下天上属于frpc的toml配置文件如下所示：</p>
+<div class="highlight-container" data-rel="Toml"><figure class="iseeu highlight toml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">serverAddr</span> = <span class="string">&quot;你的云端服务器的公网ip&quot;</span></span><br><span class="line"><span class="attr">serverPort</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="section">[[proxies]]</span></span><br><span class="line"><span class="attr">name</span> = <span class="string">&quot;Accepted Home Server&quot;</span></span><br><span class="line"><span class="attr">type</span> = <span class="string">&quot;tcp&quot;</span></span><br><span class="line"><span class="attr">localIP</span> = <span class="string">&quot;127.0.0.1&quot;</span></span><br><span class="line"><span class="attr">localPort</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remotePort</span> = <span class="number">6000</span></span><br><span class="line"><span class="comment"># 记得在安全组中开放一定的端口</span></span><br></pre></td></tr></table></figure></div>
+
+<p>接下来使用ssh命令进行测试一下即可：</p>
+<div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 6000 user@publicip</span><br></pre></td></tr></table></figure></div>
+
+<p>成功界面如下所示：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/04/19/%E4%BD%BF%E7%94%A8frp%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%BB%A5%E4%BE%BFssh%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/success.png"
+                     
+                ></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 使用frp内网穿透以便ssh连接服务器</li>
+        <li><strong>Author:</strong> Keith</li>
+        <li><strong>Created at
+                :</strong> 2024-04-19 20:21:56</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-04-19 20:24:22
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/04/19/使用frp内网穿透以便ssh连接服务器/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/03/28/PTM-Mamba-%E4%B8%80%E7%A7%8D%E5%85%B7%E6%9C%89%E5%8F%8C%E5%90%91%E9%97%A8%E6%8E%A7Mamba-Block%E7%9A%84%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BF%BB%E8%AF%91%E5%90%8E%E4%BF%AE%E9%A5%B0-PTM-%E6%84%9F%E7%9F%A5%E8%9B%8B%E7%99%BD%E8%B4%A8%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">PTM-Mamba:一种具有双向门控Mamba-Block的蛋白质翻译后修饰(PTM)感知蛋白质语言模型</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">使用frp内网穿透以便ssh连接服务器</div>
+        
+
+    </div>
+</div>
+        </div>
+    
 </div>
 
 
@@ -487,6 +698,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-side-tools-container">
